@@ -1,0 +1,443 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #eeeeee;
+  overflow: hidden;
+}
+
+.widget-bubbles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 800px;
+  margin-left: 100px;
+  position: relative;
+  bottom: 100px;
+}
+
+.widget-fab {
+  background-color: #fff;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 100%;
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-appearance: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  z-index: 9999;
+  opacity: 0;
+}
+
+.widget-fab.show-animated {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.widget-fab > svg {
+  left: 50%;
+  top: 50%;
+  margin-left: -15.5px;
+  margin-top: -15.5px;
+  position: absolute;
+  z-index: 2;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.widget-fab > svg path {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.widget-fab > svg:last-child {
+  margin-left: -9px;
+  margin-top: -9px;
+  -webkit-transform: rotate(-90deg) scale(0.8);
+          transform: rotate(-90deg) scale(0.8);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.widget-expanded .widget-fab > svg:first-child {
+  -webkit-transform: rotate(-90deg) scale(0);
+          transform: rotate(-90deg) scale(0);
+}
+
+.widget-expanded .widget-fab > svg:last-child {
+  -webkit-transform: rotate(0) scale(1);
+          transform: rotate(0) scale(1);
+  opacity: 1;
+}
+
+.widget-fab:hover {
+  -webkit-animation: none;
+          animation: none;
+  -webkit-box-shadow: 0 1pt 12pt rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1pt 12pt rgba(0, 0, 0, 0.15);
+}
+
+.widget-fab:focus {
+  outline: none;
+}
+
+.widget-iframe {
+  padding: 0px;
+  position: fixed;
+  z-index: 2147483646;
+  border-radius: 16px;
+  bottom: 85px;
+  top: auto;
+  width: 399px;
+  right: 4px;
+  margin-right: 12px;
+  height: 410px;
+  visibility: visible;
+  min-height: 360px;
+  max-height: calc(100% - 80px);
+}
+
+.widget {
+  bottom: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  left: 16px;
+  position: absolute;
+}
+
+.widget .widget-welcome {
+  -webkit-animation-duration: 200ms;
+          animation-duration: 200ms;
+  -webkit-animation-name: chat_out_animation;
+          animation-name: chat_out_animation;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  background-color: #fff;
+  border-radius: 18px;
+  -webkit-box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  left: 0;
+  position: absolute;
+  width: 375px;
+}
+
+.widget .widget-header {
+  display: block;
+  max-width: 375px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 16px 18px;
+  background-color: #2f80ed;
+}
+
+.widget .widget-header h1 {
+  font-size: 24px;
+  color: white;
+  margin: 0;
+}
+
+.widget .widget-header h1 > span {
+  float: right;
+}
+
+.widget .widget-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 220px;
+  max-height: 40vh;
+  overflow: auto;
+  padding: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: rgba(47, 128, 237, 0.12);
+}
+
+.widget .widget-body .widget-chat-message {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: auto;
+  margin-bottom: 33px;
+}
+
+.widget .widget-body .widget-chat-message .widget-chat-message-content {
+  float: left;
+  position: relative;
+}
+
+.widget .widget-body .widget-chat-message .widget-chat-message-content__message {
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  padding: 12px 18px;
+  word-break: break-word;
+  display: inline-block;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+
+.widget .widget-body .widget-chat-message .widget-chat-message-content .message-taping {
+  padding: 5px;
+}
+
+.widget .widget-body .widget-chat-message .widget-chat-message-content__message-time {
+  position: absolute;
+  color: #818791;
+  font-size: 10px;
+  margin-top: 4px;
+  left: 0;
+}
+
+.widget .widget-footer {
+  background-color: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 16px;
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.widget .widget-footer button {
+  padding: 8px;
+  background-color: #2f80ed;
+  color: white;
+  outline: none;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.widget-bubble {
+  margin: 0px 12px;
+  padding: 0px;
+  position: fixed;
+  bottom: 24px;
+  top: auto;
+  height: 60px;
+  width: 60px;
+  border-radius: 29px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px 0px;
+  background: none;
+  display: block;
+  right: 12px;
+  cursor: pointer;
+}
+
+.widget-bubble svg {
+  cursor: pointer;
+}
+
+.chat_in {
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-name: chat_in_animation;
+          animation-name: chat_in_animation;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+}
+
+.chat_out {
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-name: chat_out_animation;
+          animation-name: chat_out_animation;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  min-height: 0;
+  max-height: 0;
+  opacity: 0;
+}
+
+@-webkit-keyframes chat_in_animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+  }
+  50% {
+    -webkit-transform: scale(1.03, 1.03);
+            transform: scale(1.03, 1.03);
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+  }
+}
+
+@keyframes chat_in_animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+  }
+  50% {
+    -webkit-transform: scale(1.03, 1.03);
+            transform: scale(1.03, 1.03);
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+  }
+}
+
+@-webkit-keyframes chat_out_animation {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+  }
+}
+
+@keyframes chat_out_animation {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+  }
+}
+
+@-webkit-keyframes pulse-animation {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 1;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-animation {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 1;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.widget-exp {
+  width: 64px;
+  height: 64px;
+  z-index: 2;
+}
+
+.pulsation {
+  -webkit-animation: pulse-animation 3s infinite;
+          animation: pulse-animation 3s infinite;
+  background-color: #2f80ed;
+  border-radius: 50px;
+  height: 80px;
+  left: -8px;
+  position: absolute;
+  bottom: -8px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  width: 80px;
+  z-index: 1;
+}
+
+.pulsation:nth-of-type(2n) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+/*# sourceMappingURL=style.css.map */
