@@ -283,6 +283,18 @@ html {
   z-index: 2;
 }
 
+.widget-fab-1 {
+  &:hover {
+    
+  }
+}
+
+.widget-fab-2 {
+  &:hover {
+    
+  }
+}
+
 .pulsation {
   animation: pulse-animation 3s infinite;
   background-color: #2f80ed;
