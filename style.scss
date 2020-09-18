@@ -86,7 +86,7 @@ html {
   border-radius: 16px;
   bottom: 85px;
   top: auto;
-  width: 399px;
+  width: 365px;
   right: 4px;
   margin-right: 12px;
   height: 410px;
@@ -115,11 +115,11 @@ html {
     flex-direction: column;
     left: 0;
     position: absolute;
-    width: 375px;
+    width: 340px;
   }
   .widget-header {
     display: block;
-    max-width: 375px;
+    max-width: 340px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding: 16px 18px;
@@ -261,6 +261,38 @@ html {
   }
 }
 
+
+
+// Animation bubble
+
+.widget-exp {
+  width: 64px;
+  height: 64px;
+  z-index: 2;
+  .widget-fab {
+    position: relative;
+  }
+}
+
+
+.pulsation {
+  animation: pulse-animation 3s infinite;
+  background-color: #2f80ed;
+  border-radius: 50px;
+  height: 80px;
+  left: -8px;
+  position: absolute;
+  bottom: -8px;
+  transform: scale(0);
+  width: 80px;
+  z-index: 1;
+}
+.pulsation:nth-of-type(2n) {
+  animation-delay: 0.8s;
+}
+
+
+
 @keyframes pulse-animation {
   0% {
     -webkit-transform: scale(0);
@@ -277,15 +309,10 @@ html {
   }
 }
 
-.widget-exp {
-  width: 64px;
-  height: 64px;
-  z-index: 2;
-}
-
+// Anim bubble 
 .widget-fab-1 {
   &:hover {
-    
+
   }
 }
 
@@ -293,20 +320,4 @@ html {
   &:hover {
     
   }
-}
-
-.pulsation {
-  animation: pulse-animation 3s infinite;
-  background-color: #2f80ed;
-  border-radius: 50px;
-  height: 80px;
-  left: -8px;
-  position: absolute;
-  bottom: -8px;
-  transform: scale(0);
-  width: 80px;
-  z-index: 1;
-}
-.pulsation:nth-of-type(2n) {
-  animation-delay: 0.8s;
 }

@@ -6,6 +6,6 @@ $(document).ready(function () {
   });
 
   $(".widget-fab").click(function () {
-    $(".widget-exp").toggleClass("widget-expanded");
+    $(".widget-bubble").toggleClass("widget-expanded");
   });
 });

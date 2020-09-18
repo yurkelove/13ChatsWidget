@@ -114,7 +114,7 @@ html {
   border-radius: 16px;
   bottom: 85px;
   top: auto;
-  width: 399px;
+  width: 365px;
   right: 4px;
   margin-right: 12px;
   height: 410px;
@@ -160,12 +160,12 @@ html {
           flex-direction: column;
   left: 0;
   position: absolute;
-  width: 375px;
+  width: 340px;
 }
 
 .widget .widget-header {
   display: block;
-  max-width: 375px;
+  max-width: 340px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 16px 18px;
@@ -383,6 +383,36 @@ html {
   }
 }
 
+.widget-exp {
+  width: 64px;
+  height: 64px;
+  z-index: 2;
+}
+
+.widget-exp .widget-fab {
+  position: relative;
+}
+
+.pulsation {
+  -webkit-animation: pulse-animation 3s infinite;
+          animation: pulse-animation 3s infinite;
+  background-color: #2f80ed;
+  border-radius: 50px;
+  height: 80px;
+  left: -8px;
+  position: absolute;
+  bottom: -8px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  width: 80px;
+  z-index: 1;
+}
+
+.pulsation:nth-of-type(2n) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
 @-webkit-keyframes pulse-animation {
   0% {
     -webkit-transform: scale(0);
@@ -414,30 +444,3 @@ html {
     transform: scale(1);
   }
 }
-
-.widget-exp {
-  width: 64px;
-  height: 64px;
-  z-index: 2;
-}
-
-.pulsation {
-  -webkit-animation: pulse-animation 3s infinite;
-          animation: pulse-animation 3s infinite;
-  background-color: #2f80ed;
-  border-radius: 50px;
-  height: 80px;
-  left: -8px;
-  position: absolute;
-  bottom: -8px;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  width: 80px;
-  z-index: 1;
-}
-
-.pulsation:nth-of-type(2n) {
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
-}
-/*# sourceMappingURL=style.css.map */
