@@ -2,19 +2,64 @@ body,
 html {
   height: 100%;
   width: 100%;
-  background-color: #eeeeee;
+  background: rgba(238, 239, 240, 0.55);
   overflow: hidden;
+  margin: 0;
+}
+
+
+$primary : #2f80ed;
+
+.widget-side-switcher {
+  position: fixed;
+  top: 400px;
+  display: flex;
+  > div {
+    background: white;
+    padding: 16px;
+    border: 8px;
+    border-radius: 8px;
+    color:$primary;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    &:hover {
+      background-color: #cce5ff;
+      transition: all .25s ease;
+    }
+  }
+  .widget-side-switcher-left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 1px solid $primary;
+  }
+  .widget-side-switcher-right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.widget-wrapper {
+  position: absolute;
+    width: 370px;
+    height: 100%;
+    right: 0;
 }
 
 .widget-bubbles {
   display: flex;
   align-items: flex-end;
   height: 100%;
-  justify-content: space-between;
-  max-width: 800px;
-  margin-left: 100px;
+  max-width: 75%;
   position: relative;
-  bottom: 100px;
+  margin-bottom: 100px;
+  background-color: #E5E5E5;
+  > div {
+    margin-right: 20px;
+    position: relative;
+    bottom: 100px;
+    left: 35%;
+  }
 }
 
 .widget-fab {
@@ -79,16 +124,55 @@ html {
   }
 }
 
+.widget-right {
+  .widget-bubble {
+    right: 32px;
+  }
+  .chat_in {
+    animation-duration: 300ms;
+    animation-name: chat_in_animation_right;
+    transition-timing-function: ease-in;
+  }
+  
+  .chat_out {
+    animation-duration: 300ms;
+    animation-name: chat_out_animation_right;
+    transition-timing-function: ease-in;
+    min-height: 0;
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.widget-left {
+  .widget-bubble {
+    right: auto;
+  }
+  .chat_in {
+    animation-duration: 300ms;
+    animation-name: chat_in_animation_left;
+    transition-timing-function: ease-in;
+  }
+  
+  .chat_out {
+    animation-duration: 300ms;
+    animation-name: chat_out_animation_left;
+    transition-timing-function: ease-in;
+    min-height: 0;
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
 .widget-iframe {
   padding: 0px;
   position: fixed;
-  z-index: 2147483646;
+  z-index: 2;
   border-radius: 16px;
   bottom: 85px;
   top: auto;
   width: 365px;
-  right: 4px;
-  margin-right: 12px;
+  right: 20px;
   height: 410px;
   visibility: visible;
   min-height: 360px;
@@ -123,7 +207,7 @@ html {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding: 16px 18px;
-    background-color: #2f80ed;
+    background-color: $primary;
     h1 {
       font-size: 24px;
       color: white;
@@ -186,7 +270,7 @@ html {
     justify-content: space-between;
     button {
       padding: 8px;
-      background-color: #2f80ed;
+      background-color: $primary;
       color: white;
       outline: none;
       border-radius: 8px;
@@ -197,7 +281,6 @@ html {
   }
 }
 .widget-bubble {
-  margin: 0px 12px;
   padding: 0px;
   position: fixed;
   // z-index: 2147483644;
@@ -209,29 +292,15 @@ html {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px 0px;
   background: none;
   display: block;
-  right: 12px;
   cursor: pointer;
   svg {
     cursor: pointer;
   }
 }
 
-.chat_in {
-  animation-duration: 300ms;
-  animation-name: chat_in_animation;
-  transition-timing-function: ease-in;
-}
 
-.chat_out {
-  animation-duration: 300ms;
-  animation-name: chat_out_animation;
-  transition-timing-function: ease-in;
-  min-height: 0;
-  max-height: 0;
-  opacity: 0;
-}
 
-@keyframes chat_in_animation {
+@keyframes chat_in_animation_right {
   0% {
     opacity: 0;
     transform: scale(0, 0);
@@ -248,7 +317,7 @@ html {
   }
 }
 
-@keyframes chat_out_animation {
+@keyframes chat_out_animation_right {
   0% {
     opacity: 1;
     transform: scale(1, 1);
@@ -258,6 +327,37 @@ html {
     opacity: 0;
     transform: scale(0, 0);
     transform-origin: bottom right;
+  }
+}
+
+
+@keyframes chat_in_animation_left {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+    transform-origin: bottom left;
+  }
+  50% {
+    transform: scale(1.03, 1.03);
+    transform-origin: bottom left;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+    transform-origin: bottom left;
+  }
+}
+
+@keyframes chat_out_animation_left {
+  0% {
+    opacity: 1;
+    transform: scale(1, 1);
+    transform-origin: bottom left;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0, 0);
+    transform-origin: bottom left;
   }
 }
 
@@ -274,10 +374,19 @@ html {
   }
 }
 
+.widget-exp-pulse {
+  width: 64px;
+  height: 64px;
+  z-index: 2;
+  .widget-fab-pulse {
+    position: relative;
+  }
+}
+
 
 .pulsation {
   animation: pulse-animation 3s infinite;
-  background-color: #2f80ed;
+  background-color: $primary;
   border-radius: 50px;
   height: 80px;
   left: -8px;
@@ -306,18 +415,5 @@ html {
     -webkit-transform: scale(1);
     opacity: 0;
     transform: scale(1);
-  }
-}
-
-// Anim bubble 
-.widget-fab-1 {
-  &:hover {
-
-  }
-}
-
-.widget-fab-2 {
-  &:hover {
-    
   }
 }
