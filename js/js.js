@@ -12,9 +12,6 @@ $(document).ready(function () {
   $(".widget-fab-pulse").click(function () {
     $(".widget-exp-pulse").toggleClass("widget-expanded");
   });
-  $(".widget-fab-hover").click(function () {
-    $(".widget-exp-hover").toggleClass("widget-expanded");
-  });
 
   $(".widget-side-switcher-left").click(function () {
     $(".widget-wrapper").removeClass("widget-right").addClass("widget-left");
