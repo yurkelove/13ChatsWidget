@@ -9,7 +9,7 @@ html {
 
 .widget-side-switcher {
   position: fixed;
-  top: 400px;
+  top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
