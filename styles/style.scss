@@ -7,8 +7,7 @@ html {
   margin: 0;
 }
 
-
-$primary : #2f80ed;
+$primary: #2f80ed;
 
 .widget-side-switcher {
   position: fixed;
@@ -19,13 +18,13 @@ $primary : #2f80ed;
     padding: 16px;
     border: 8px;
     border-radius: 8px;
-    color:$primary;
+    color: $primary;
     font-weight: bold;
     font-size: 18px;
     cursor: pointer;
     &:hover {
       background-color: #cce5ff;
-      transition: all .25s ease;
+      transition: all 0.25s ease;
     }
   }
   .widget-side-switcher-left {
@@ -41,19 +40,42 @@ $primary : #2f80ed;
 
 .widget-wrapper {
   position: absolute;
-    width: 370px;
-    height: 100%;
-    right: 0;
+  width: 370px;
+  height: 100%;
+  right: 0;
+}
+
+.widget-footer-navigation {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  nav {
+    width: 100%;
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      li {
+        list-style-type: none;
+        color: $primary;
+        margin-right: 25px;
+        a {
+          color: $primary;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }
 
 .widget-bubbles {
   display: flex;
   align-items: flex-end;
   height: 100%;
-  max-width: 75%;
   position: relative;
   margin-bottom: 100px;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   > div {
     margin-right: 20px;
     position: relative;
@@ -61,7 +83,6 @@ $primary : #2f80ed;
     left: 35%;
   }
 }
-
 
 .widget-fab {
   background-color: #fff;
@@ -134,7 +155,7 @@ $primary : #2f80ed;
     animation-name: chat_in_animation_right;
     transition-timing-function: ease-in;
   }
-  
+
   .chat_out {
     animation-duration: 300ms;
     animation-name: chat_out_animation_right;
@@ -154,7 +175,7 @@ $primary : #2f80ed;
     animation-name: chat_in_animation_left;
     transition-timing-function: ease-in;
   }
-  
+
   .chat_out {
     animation-duration: 300ms;
     animation-name: chat_out_animation_left;
@@ -293,13 +314,12 @@ $primary : #2f80ed;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px 0px;
   background: none;
   display: block;
+  z-index: 99999;
   cursor: pointer;
   svg {
     cursor: pointer;
   }
 }
-
-
 
 @keyframes chat_in_animation_right {
   0% {
@@ -331,7 +351,6 @@ $primary : #2f80ed;
   }
 }
 
-
 @keyframes chat_in_animation_left {
   0% {
     opacity: 0;
@@ -362,8 +381,6 @@ $primary : #2f80ed;
   }
 }
 
-
-
 // Animation bubble
 
 .widget-exp {
@@ -384,7 +401,6 @@ $primary : #2f80ed;
   }
 }
 
-
 .pulsation {
   animation: pulse-animation 3s infinite;
   background-color: $primary;
@@ -400,8 +416,6 @@ $primary : #2f80ed;
 .pulsation:nth-of-type(2n) {
   animation-delay: 0.8s;
 }
-
-
 
 @keyframes pulse-animation {
   0% {

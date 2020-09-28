@@ -28,8 +28,8 @@ html {
 
 .widget-side-switcher > div:hover {
   background-color: #cce5ff;
-  -webkit-transition: all .25s ease;
-  transition: all .25s ease;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .widget-side-switcher .widget-side-switcher-left {
@@ -50,6 +50,38 @@ html {
   right: 0;
 }
 
+.widget-footer-navigation {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+}
+
+.widget-footer-navigation nav {
+  width: 100%;
+}
+
+.widget-footer-navigation nav ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.widget-footer-navigation nav ul li {
+  list-style-type: none;
+  color: #2f80ed;
+  margin-right: 25px;
+}
+
+.widget-footer-navigation nav ul li a {
+  color: #2f80ed;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .widget-bubbles {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,10 +90,9 @@ html {
       -ms-flex-align: end;
           align-items: flex-end;
   height: 100%;
-  max-width: 75%;
   position: relative;
   margin-bottom: 100px;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
 }
 
 .widget-bubbles > div {
@@ -370,6 +401,7 @@ html {
           box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px 0px;
   background: none;
   display: block;
+  z-index: 99999;
   cursor: pointer;
 }
 
@@ -608,3 +640,4 @@ html {
     transform: scale(1);
   }
 }
+/*# sourceMappingURL=style.css.map */
